@@ -32,14 +32,10 @@ class Api{
   static final Api _api = Api._init();
 
   ///Factory method for Api Singleton
-  factory Api() {
-    return _api;
-  }
+  factory Api() => _api;
 
   ///Initialization method for Api Singleton
-  static _init(){
-    _setPrefHandle();
-  }
+  static _init() => _setPrefHandle();
 
   ///Private get token method to retrieve token on Init from SharedPref if available.
   static _getToken(){
@@ -50,15 +46,14 @@ class Api{
     }
   }
   /// Token Getter
-  static String getToken(){
-    return token;
-  }
+  static String getToken() => token;
 
   /// Init method for Getting SharedPref
   static _setPrefHandle() async {
     sharedPref =  await SharedPreferences.getInstance();
     _getToken();
   }
+
   ///Private async method to login, Takes [username] and [password] as parameters. (Logic Method)
   static Future<void> _login(String username, String password) async {
     if(!_auth){
@@ -76,7 +71,5 @@ class Api{
   static void login(String username, String password) => _login(username, password);
 
   ///Check if User is authenticated.
-  static bool auth(){
-    return _auth;
-  }
+  static bool auth() => _auth;
 }
