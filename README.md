@@ -8,7 +8,8 @@ This class has two dependencies -
 
 ### How to Use
 > 1. Edit Network.dart and add passport client id and client secret and baseurl of your webapp in the appropriate variables.
-> 2. Use the class anywhere in your code, simply like - `Api.login(username, password);`
+> 2. Initialize the class in main like - `Api api = Api();`
+> 3. Use the class anywhere in your code, simply like - `Api.login(username, password);`
 
 ### Methods
 ```dart
