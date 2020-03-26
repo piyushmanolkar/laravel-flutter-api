@@ -77,7 +77,7 @@ class Api{
   }
 
   ///Logout Method
-  static logout(){
+  static void logout(){
     sharedPref.remove('authToken');
     _auth = false;
   }
