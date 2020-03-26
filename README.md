@@ -1,9 +1,13 @@
 # laravel-flutter-api
 A basic auth SINGLETON class to get access token from `laravel/passport` library, this comes with persistent token achieved with shared preference manager.
 
-This class has two dependencies - 
+This class has three dependencies - 
 
 ```
+This one is flutter default
+flutter/material.dart
+
+These you have to install additionally.
 shared_preferences: ^0.5.5
 dio: ^3.0.0
 ```
