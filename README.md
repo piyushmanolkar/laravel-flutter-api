@@ -12,7 +12,7 @@ dio: ^3.0.0
 1. Place Network.Dart in lib/ in your flutter project.
 2. Include Nework.dart in your flutter project - `import 'package:your_package_name/Network.dart';`
 3. Edit Network.dart and add passport client id and client secret and baseurl of your webapp in the appropriate variables.
-4. Initialize the class in main like - `Api api = Api();`
+4. Initialize the class in the main widget like - `Api api = Api();`
 5. Use the class anywhere in your code, simply like - `Api.login(username, password);`
 
 ### Methods
