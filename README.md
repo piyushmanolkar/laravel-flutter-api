@@ -29,8 +29,8 @@ I have made this for my personal use. Any suggetions are welcome, any demands wi
 
 ///Login
 /// Optional params - context and namedRoute - to redirect after authentication
-/// NOTE: namedRoute must be a String and a route defined in optional parameter of MaterialApp && Login must be done after specifying
-/// the material routes.
+/// NOTE: namedRoute must be a String and a route defined in optional parameter of MaterialApp and
+/// Login must be done after specifying the material routes.
 void login(username, password, [BuildContext context, String namedRoute])
 
 ///Get Auth Token
