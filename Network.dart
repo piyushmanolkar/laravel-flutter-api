@@ -76,6 +76,12 @@ class Api{
     else _login(username, password);
   }
 
+  ///Logout Method
+  static logout(){
+    sharedPref.remove('authToken');
+    _auth = false;
+  }
+
   ///Check if User is authenticated.
   static bool auth() => _auth;
 }
