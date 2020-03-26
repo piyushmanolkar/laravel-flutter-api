@@ -16,7 +16,7 @@ I have made this for my personal use. Any suggetions are welcome, any demamds wi
 3. Edit Network.dart and add passport client id and client secret and baseurl of your webapp in the appropriate variables.
 4. Initialize the class in the main widget like - `Api api = Api();`
 ![Init](https://i.ibb.co/tsw3zDN/image.png)
-5. Use the class anywhere in your code, simply like - `Api.login(username, password);`
+5. Use the class anywhere in your code, simply include Network.dart and access the class like - `Api.login(username, password);`
 
 ### Methods
 ```dart
