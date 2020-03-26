@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 ///Class for api calls and auth token management.
@@ -54,8 +55,8 @@ class Api{
     _getToken();
   }
 
-  ///Private async method to login, Takes [username] and [password] as parameters. (Logic Method)
-  static Future<void> _login(String username, String password) async {
+  ///Private async method to login, Takes [username] and [password] as parameters. Optional parameters [context] and [namedRoute] to redirect after login. (Logic Method)
+  static Future<void> _login(String username, String password, [BuildContext context, String namedRoute]) async {
     if(!_auth){
       Response response = await api.post('oauth/token', data:FormData.fromMap({ 'grant_type':_grantType, 'client_id':_clientId, 'client_secret':_clientSecret, 'username':username, 'password':password, 'scope':''}));
       Map<String, dynamic> jsonArr = Map.from(response.data);
@@ -63,12 +64,17 @@ class Api{
         token = jsonArr['access_token'];
         sharedPref.setString('authToken', token);
         _auth = true;
+        if(context != null && (namedRoute.isNotEmpty || namedRoute != null))
+          Navigator.pushReplacementNamed(context, namedRoute);
       }
     }
   }
   
-  ///Public method for login, Takes [username] and [password] as parameters to pass to actual logic method. (Facade Method)
-  static void login(String username, String password) => _login(username, password);
+  ///Public method for login, Takes [username] and [password] as parameters to pass to actual logic method.  Optional parameters [context] and [namedRoute] to redirect after login. (Facade Method)
+  static void login(String username, String password, [BuildContext context, String namedRoute]) {
+    if(context != null && (namedRoute.isNotEmpty || namedRoute != null)) _login(username, password, context, namedRoute);
+    else _login(username, password);
+  }
 
   ///Check if User is authenticated.
   static bool auth() => _auth;
