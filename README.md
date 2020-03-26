@@ -4,8 +4,8 @@ A basic auth SINGLETON class to get access token from `laravel/passport` library
 This class has three dependencies - 
 
 ```
-This one is flutter default
-flutter/material.dart
+Included in flutter by default.
+flutter/material.dart //Needed for BuildContext
 
 These you have to install additionally.
 shared_preferences: ^0.5.5
