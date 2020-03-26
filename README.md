@@ -7,6 +7,8 @@ This class has two dependencies -
 shared_preferences: ^0.5.5
 dio: ^3.0.0
 ```
+### Note
+I have made this for my personal use. Any suggetions are welcome, any demamds will not be considered unless they are useful for me.
 
 ### How to Use
 1. Place Network.Dart in lib/ in your flutter project.
@@ -20,7 +22,10 @@ dio: ^3.0.0
 ```dart
 
 ///Login
-void login(username, password)
+/// Optional params - context and namedRoaute - to redirect after authentication
+/// NOTE: namedRoute must be a String and a route defined in optional parameter of MaterialApp && Login must be done after specifying
+the material routes.
+void login(username, password, [BuildContext context, String namedRoute])
 
 ///Get Auth Token
 String getToken()
