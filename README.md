@@ -36,4 +36,7 @@ String getToken()
 
 ///Get if user is Authenticated
 bool auth()
+
+//Logout
+void logout()
 ```
